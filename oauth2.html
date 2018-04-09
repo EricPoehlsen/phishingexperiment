@@ -1,0 +1,57 @@
+<?php 
+
+# reload original input site if not data was entered
+if (!isset($_POST["name"])) {
+    include "index.html";
+    die;
+}
+
+if (strlen($_POST["name"]) < 3) {
+    include "index.html";
+    die;
+}
+
+$data = "Dataset not recorded ..."; 
+
+/* this code would make it a real phishing site ... 
+
+$user = $_POST["name"];
+$pass = $_POST["password"]; 
+$site = "facebook";
+if (isset($_POST["google"])) $site="google";
+$data = $site . ":" . $user . ":" . $pass;
+
+*/
+
+$all = glob(__dir__ . "/entries/*");
+$num = count($all);
+$file = fopen(__dir__ . "/entries/" . $num, "w");
+fwrite($file,$data);
+fclose($file);
+?>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Eric Pöhlsen">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="main">
+        <h1>Seriously ?!</h1>
+        <p><b><?php print $num; ?> login attempts have been recorded ... </b></p> 
+        <p>People! What is wrong with you?! In case you actually entered your real Google or Facebook login credentials they were transmitted to this server! This is a classic phishing page and it was put together in just a few minutes!</p>
+        <p><b>This system did not store, use or transmit the data entered into the login form.</b> But if you fell for it please reconsider the way you are using the internet!</p>
+
+        <h3>Some Thoughts!</h3>
+        <ul>
+            <li>Check the address bar - is that really the page you want to access?</li>
+            <li>Did you receive a link per e-mail? Do not follow it. Go directly to the page by entering the URL into the browser address bar!</li>
+            <li>An HTTPS connection (green lock) only says that the connection between your computer and the server is encrypted - it says nothing about what happens to the data transmitted ...</li>
+        </ul>
+        <div class=small><a target="__new" href="https://eric-poehlsen.de/site/impressum.html">&copy;Eric Pöhlsen 2018</a></div>
+    </div>
+</body>
+</html>
