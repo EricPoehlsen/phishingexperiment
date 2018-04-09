@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #888;
+}    
+
+input {
+    background-color: #eee;
+    padding: 12px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    background-color: #eee;
+    padding: 12px;
+    padding-left: 42px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    background-repeat: no-repeat;
+    background-position: 4px 4px;
+}
+
+button:hover, input:hover {
+    background-color: #dfd;
+}
+
+button.facebook {
+    background-image: url("facebook.png");
+}
+
+button.google {
+    background-image: url("google.png");
+}
+
+h2 {
+    font-size: 2em;
+    background-image: url("lock.png");
+    background-repeat: no-repeat;
+    padding: 10px;
+    padding-left: 48px;
+}
+a {
+    text-decoration: none;
+}
+
+.small {
+    font-size: .7em;
+    color: #ddd;
+}
+
+.main {
+    background-color: #fff;
+    margin-top: 3em;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    max-width: 20em;
+    min-width: 20em;
+    padding-left: 3em;
+    padding-right: 3em;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    
+}
